@@ -5,9 +5,9 @@
 </meta>
 <title>test_mousemove</title>
 </head>
-<body>
+<body style="position:relative;height:300px;" >
 
-<p id='ff'>txy</p>
+<p id='ff' style="position:absolute;">txy</p>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"'></script>
 <script  type='text/javascript'>
 $(function(){
@@ -15,9 +15,9 @@ $('#ff').css({top:'0px',left:'0px'});
 $('body').mousemove(function(e)
                  {  var y=e.pageY;
 				     var x=e.pageX;
-					 
-				   $('#ff').animate({'left':x,top:y},1000);
-				alert(x+'px');
+					// $('#ff').css({'top':y,left:x+'px'});
+				   $('#ff').stop().animate({'left':x,'top':y},1000);
+				  
 				});
 
 
